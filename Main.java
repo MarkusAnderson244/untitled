@@ -5,145 +5,75 @@ public class Main {
         //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
         // to see how IntelliJ IDEA suggests fixing it.
 
-        var dog = 8.0;
-        System.out.println(dog);
-        var cat = 3.6;
-        System.out.println(cat);
-        var paper = 763789;
-        System.out.println(paper);
+        int age = 19;
+        if (age >= 18) {
+            System.out.println("Вы совершеннолетний!");
+        } else {
+            System.out.println("Вы ещё не достигли совершеннолетия, нужно немного подождать!");
+        }
 
-        dog = dog + 4;
-        System.out.println(dog);
-        cat = cat + 4;
-        System.out.println(cat);
-        paper = paper + 4;
-        System.out.println(paper);
+        int temp = 7;
+        if (temp < 5)  {
+            System.out.println("На улице " + temp + " градусов,нужно надеть шапку");
+        } else {
+            System.out.println("На улице " + temp + " градусов, можно идти без шапки");
+        }
 
-        dog = dog - 3.5;
-        System.out.println(dog);
-        cat = cat - 1.6;
-        System.out.println(cat);
-        paper = paper - 7639;
-        System.out.println(paper);
+        int speed = 100;
+        if (speed > 60) {
+            System.out.println("Если скорость " + speed + " км/ч придётся заплатить штраф");
+        } else {
+            System.out.println("Если скорость " + speed + " км/ч можно ездить спокойно");
+        }
 
-        var friend = 19;
-        System.out.println(friend);
-        friend = friend + 2;
-        System.out.println(friend);
-        friend = friend / 7;
-        System.out.println(friend);
+        int howOld = 24;
+        if (howOld > 2 && howOld < 7) {
+            System.out.println("Если человеку " + howOld + " лет, то ему нужно ходить в детский сад");
+        }
+        if (howOld >= 7 && howOld < 18) {
+            System.out.println("Если человеку " + howOld + " лет, то ему нужно ходить в школу");
+        }
+        if (howOld >= 18 && howOld <= 24) {
+            System.out.println("Если человеку " + howOld + " лет, то ему нужно ходить в университет");
+        }
+        if (howOld > 24) {
+            System.out.println("Если человеку " + howOld + " лет, то ему нужно ходить на работу");
+        }
 
-        var frog = 3.5;
-        System.out.println(frog);
-        frog = frog * 10;
-        System.out.println(frog);
-        frog = frog / 3.5;
-        System.out.println(frog);
-        frog = frog + 4;
-        System.out.println(frog);
+        int kidAge = 15;
+        if (kidAge < 5) {
+            System.out.println("Если возраст ребенка равен " + kidAge + ", то он не может кататься на аттракционе");
+        }
+        if (kidAge >= 5 &&  kidAge <= 14) {
+            System.out.println("Если возраст ребенка равен " + kidAge + ", то он может кататься на аттракционе только в спопровождении взрослого");
+        }
+        if (kidAge > 14) {
+            System.out.println("Если возраст ребенка равен " + kidAge + ", то он может кататься на аттракционе без сопровождения взрослого");
+        }
 
-        var mass1 = 78.2;
-        var mass2 = 82.7;
-        var massTotal = mass1 + mass2;
-        System.out.println("Общая масса двух боксеров " + massTotal + " кг");
-        var massDiff = mass2 - mass1;
-        System.out.println("Разница веса двух боксеров составляет " + massDiff + " кг");
-        var massRemainder = mass2 % mass1;
-        System.out.println("Остаток от деления " + massRemainder);
+        int numberOfPassengers = 61;
+        int maxCapacity = 102;
+        int seating = 60;
+        int standing = maxCapacity - seating;
+        int capacityLeft = maxCapacity - numberOfPassengers;
+        if (numberOfPassengers <= seating) {
+            System.out.println("Мест осталось " + capacityLeft + ". Из них сидячих " + (seating - numberOfPassengers ) + " и стоячих " + standing);
+        } else if (numberOfPassengers < maxCapacity){
+            System.out.println("Стоячих Мест осталось " + capacityLeft);
+        } else {
+            System.out.println("Мест не осталось!");
+        }
 
-        var y = 640;
-        var z = 8;
-        var x = y / z;
-        System.out.println("Всего работников в компании - " + x + " человек");
-        var x1 = 94;
-        var x2 = x + x1;
-        var y1 = x2 * z;
-        System.out.println("Если в компании работает " + x2 + " человек, то всего " + y1 + " часов работы может быть поделено между сотрудниками");
+        int one = 1;
+        int two = 2;
+        int three = 3;
+        if (one > two && one > three) {
+            System.out.println(" число " + one + " самое большое");
+        } else if (two > one && two > three) {
+            System.out.println(" число " + two + " самое большое");
+        } else {
+            System.out.println(" число " + three + " самое большое");
+        }
 
-
-        byte a = 127;
-        System.out.println("Значение переменной a с типом byte равно " + a);
-        short b = 32767;
-        System.out.println("Значение переменной b с типом short равно " + b);
-        int c = 2147483647;
-        System.out.println("Значение переменной c с типом int равно " + c);
-        long d = 9223372036854775807L;
-        System.out.println("Значение переменной d с типом long равно " + d);
-        float e = 3.4E+38f;
-        System.out.println("Значение переменной e с типом float равно " + e);
-        double f = 1.7E+308;
-        System.out.println("Значение переменной f с типом double равно " + f);
-
-        float flo = 27.12f;
-        long lo = 987678965549l;
-        double dou = 2.786;
-        short sh = 569;
-        short sho = -159;
-        int in = 27897;
-        byte by = 67;
-
-        byte pavlovna = 23;
-        byte sergeevna = 27;
-        byte andreevna = 30;
-        int kids = pavlovna + sergeevna + andreevna;
-        int sheets = 480;
-        int sheetsPerKid = sheets / kids;
-        System.out.println("На каждого ученика рассчитано " + sheetsPerKid + " листов бумаги");
-
-        int bpm = 8;
-        int tweentyMinutes = 20;
-        int bottlePerTweentyMinutes = tweentyMinutes * bpm;
-        System.out.println("За 20 минут машина произвела " + bottlePerTweentyMinutes + " штук бутылок");
-        int day = 1440;
-        int bottlePerDay = day * bpm;
-        System.out.println("За день машина произвела " + bottlePerDay + " штук бутылок");
-        int threeDay = 4320;
-        int bottlePerthreeDay = threeDay * bpm;
-        System.out.println("За три дня машина произвела " + bottlePerthreeDay + " штук бутылок");
-        int month = 43200;
-        int bottlePerMonth = month * bpm;
-        System.out.println("За месяц машина произвела " + bottlePerMonth + " штук бутылок");
-
-        int cans = 120;
-        int whitePaintPerClass = 2;
-        int brownPaintPerClass = 4;
-        int totalCansPerClass = whitePaintPerClass + brownPaintPerClass;
-        int totalClass = cans / totalCansPerClass;
-        int totalWhitePaint = totalClass * whitePaintPerClass;
-        int totalBrownPaint = totalClass * brownPaintPerClass;
-        System.out.println("В школе, где " + totalClass + " классов, нужно " + totalWhitePaint + " банок белой краски и " + totalBrownPaint + " банок коричневой краски");
-
-        int banan = 80;
-        int milk = 105;
-        int icecream = 100;
-        int egg = 70;
-        int totalWeight = 5 * banan + 2 * milk + 2 * icecream + 4 * egg;
-        System.out.println("итоговый вес в граммах " + totalWeight);
-        float totalKg = totalWeight / 1000f;
-        System.out.println("итого килограмм " + totalKg);
-
-        int targetWeigt = 7;
-        float diet1 = 0.25f;
-        float daysToLoseWeight1 = targetWeigt / diet1;
-        System.out.println(daysToLoseWeight1);
-        float diet2 = 0.5f;
-        float daysToLoseWeight2 = targetWeigt / diet2;
-        System.out.println(daysToLoseWeight2);
-        float diet3 = (diet1 + diet2) / 2;
-        float daysToLoseWeight3 = targetWeigt / diet3;
-        System.out.println(daysToLoseWeight3);
-
-        int masha = 67760;
-        int riseMasha = masha + (masha / 10);
-        int mashaPayDay = (riseMasha - masha) * 12;
-        System.out.println("Маша теперь получает " + riseMasha + " рублей. Годовой доход вырос на " + mashaPayDay + " рублей.");
-        int denis = 83690;
-        int riseDenis = denis + (denis / 10);
-        int denisPayDay = (riseDenis - denis) * 12;
-        System.out.println("Денис теперь получает " + riseDenis + " рублей. Годовой доход вырос на " + denisPayDay + " рублей.");
-        int kristina = 76230;
-        int riseKristina = kristina + (kristina / 10);
-        int kristinaPayDay = (riseKristina - kristina) * 12;
-        System.out.println("Кристина теперь получает " + riseKristina + " рублей. Годовой доход вырос на " + kristinaPayDay + " рублей.");
     }
 }
