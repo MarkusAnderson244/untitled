@@ -5,75 +5,75 @@ public class Main {
         //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
         // to see how IntelliJ IDEA suggests fixing it.
 
-        int age = 19;
-        if (age >= 18) {
-            System.out.println("Вы совершеннолетний!");
+        int clientOS = 1;
+        if (clientOS == 0) {
+            System.out.println("Установите версию приложения для iOS поссылке");
+        } else if (clientOS == 1) {
+            System.out.println("Установите версию приложения для Android по ссылке");
+        } else System.out.println("Ошибка!");
+
+        int clientDeviceYear = 2014;
+        if (clientOS == 0 && clientDeviceYear >= 2015) {
+            System.out.println("Установите версию приложения для iOS поссылке");
+        } else if (clientOS == 1 && clientDeviceYear >= 2015) {
+            System.out.println("Установите версию приложения для Android по ссылке");
+        } else if (clientOS == 0 && clientDeviceYear < 2015) {
+            System.out.println("Установите облегчённую версию приложения для iOS поссылке");
+        } else if (clientOS == 1 && clientDeviceYear < 2015) {
+            System.out.println("Установите облегчённую версию приложения для Android по ссылке");
+        } else System.out.println("Ошибка!");
+
+        int year = 2021;
+        if (year <= 1584) {
+            System.out.println("Ошибка: год должен быть больше 1584.");
         } else {
-            System.out.println("Вы ещё не достигли совершеннолетия, нужно немного подождать!");
+            if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
+                System.out.println(year + " год — високосный.");
+            } else {
+                System.out.println(year + " год — обычный.");
+            }
         }
 
-        int temp = 7;
-        if (temp < 5)  {
-            System.out.println("На улице " + temp + " градусов,нужно надеть шапку");
+        int deliveryTime = 1;
+        int deliveryDistance = 95;
+        if (deliveryDistance > 100) {
+            System.out.println("К сожалению, на такое расстояние доставка не осуществляется");
+        } else if (deliveryDistance <= 20) {
+            System.out.println("Потребуется дней на доставку: " + deliveryTime);
+        } else if (deliveryDistance > 20 && deliveryDistance <= 60) {
+            System.out.println("Потребуется дней на доставку: " + 2 * deliveryTime);
         } else {
-            System.out.println("На улице " + temp + " градусов, можно идти без шапки");
+            System.out.println("Потребуется дней на доставку: " + 3 * deliveryTime);
         }
 
-        int speed = 100;
-        if (speed > 60) {
-            System.out.println("Если скорость " + speed + " км/ч придётся заплатить штраф");
+        int monthNumber = 4;
+        if (monthNumber > 12 || monthNumber <= 0) {
+            System.out.println("Такого месяца не существует!");
         } else {
-            System.out.println("Если скорость " + speed + " км/ч можно ездить спокойно");
+            switch (monthNumber) {
+                case 12:
+                case 1:
+                case 2:
+                    System.out.println("Сейчас зима");
+                    break;
+                case 3:
+                case 4:
+                case 5:
+                    System.out.println("Сейчас весна");
+                    break;
+                case 6:
+                case 7:
+                case 8:
+                    System.out.println("Сейчас лето!");
+                    break;
+                case 9:
+                case 10:
+                case 11:
+                    System.out.println("Сейчас осень");
+                    break;
+            }
         }
 
-        int howOld = 24;
-        if (howOld > 2 && howOld < 7) {
-            System.out.println("Если человеку " + howOld + " лет, то ему нужно ходить в детский сад");
-        }
-        if (howOld >= 7 && howOld < 18) {
-            System.out.println("Если человеку " + howOld + " лет, то ему нужно ходить в школу");
-        }
-        if (howOld >= 18 && howOld <= 24) {
-            System.out.println("Если человеку " + howOld + " лет, то ему нужно ходить в университет");
-        }
-        if (howOld > 24) {
-            System.out.println("Если человеку " + howOld + " лет, то ему нужно ходить на работу");
-        }
-
-        int kidAge = 15;
-        if (kidAge < 5) {
-            System.out.println("Если возраст ребенка равен " + kidAge + ", то он не может кататься на аттракционе");
-        }
-        if (kidAge >= 5 &&  kidAge <= 14) {
-            System.out.println("Если возраст ребенка равен " + kidAge + ", то он может кататься на аттракционе только в спопровождении взрослого");
-        }
-        if (kidAge > 14) {
-            System.out.println("Если возраст ребенка равен " + kidAge + ", то он может кататься на аттракционе без сопровождения взрослого");
-        }
-
-        int numberOfPassengers = 61;
-        int maxCapacity = 102;
-        int seating = 60;
-        int standing = maxCapacity - seating;
-        int capacityLeft = maxCapacity - numberOfPassengers;
-        if (numberOfPassengers <= seating) {
-            System.out.println("Мест осталось " + capacityLeft + ". Из них сидячих " + (seating - numberOfPassengers ) + " и стоячих " + standing);
-        } else if (numberOfPassengers < maxCapacity){
-            System.out.println("Стоячих Мест осталось " + capacityLeft);
-        } else {
-            System.out.println("Мест не осталось!");
-        }
-
-        int one = 1;
-        int two = 2;
-        int three = 3;
-        if (one > two && one > three) {
-            System.out.println(" число " + one + " самое большое");
-        } else if (two > one && two > three) {
-            System.out.println(" число " + two + " самое большое");
-        } else {
-            System.out.println(" число " + three + " самое большое");
-        }
 
     }
 }
