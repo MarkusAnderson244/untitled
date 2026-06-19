@@ -49,8 +49,8 @@ public class Main {
         // Задача 9
         int total1 = 0;
         for (int f = 1; f <= 12; f++) {
-            total1 = total1 + (total1 / 100);
             total1 = total1 + savings;
+            total1 = total1 + (total1 / 100);
             System.out.println("Месяц " + f + " сумма накоплений равна " + total1 + " рублей");
         }
 
