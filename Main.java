@@ -2,63 +2,96 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
+        // Задание 1
+        int firstFriday = 7;
+        int day = 1;
+        for (; day <= 31; day++) {
+            if (day > 31 || day <= 0 || firstFriday > 7 || firstFriday <= 0) {
+                System.out.println("Неверно указана дата");
+                break;
+            }
+            if ((day - firstFriday) % 7 == 0) {
+                System.out.println("Сегодня пятница, " + day + "-е число. Необходимо подготовить отчет");
 
-        var dog = 8.0;
-        System.out.println(dog);
-        var cat = 3.6;
-        System.out.println(cat);
-        var paper = 763789;
-        System.out.println(paper);
+            }
+        }
+        // Задание 2
+        int distance = 0;
+        int goal = 42195;
+        do {
+            distance = distance + 500;
+            System.out.println("Держитесь, осталось " + (goal - distance) + " метров");
+        } while (distance < goal && goal - distance > 500);
 
-        dog = dog + 4;
-        System.out.println(dog);
-        cat = cat + 4;
-        System.out.println(cat);
-        paper = paper + 4;
-        System.out.println(paper);
+        int distance2 = 0;
+        for (int i = 0; distance2 < goal && goal - distance2 > 500; i++) {
+            distance2 = distance2 + 500;
+            System.out.println("Держитесь, осталось " + (goal - distance2) + " метров");
 
-        dog = dog - 3.5;
-        System.out.println(dog);
-        cat = cat - 1.6;
-        System.out.println(cat);
-        paper = paper - 7639;
-        System.out.println(paper);
+        }
+        // Задание 3
 
-        var friend = 19;
-        System.out.println(friend);
-        friend = friend + 2;
-        System.out.println(friend);
-        friend = friend / 7;
-        System.out.println(friend);
+        int budget = 1000;
+        int currentDay = 1;
+        int dailyRate = 100;
+        while (budget > 0) {
+            if (currentDay % 5 == 0) {
+                currentDay++;
+                continue;
+            }
+            budget -= dailyRate;
+            currentDay++;
+        }
+        System.out.println("Количество дней, на которые хватит бюджета (while): " + (currentDay - 1));
 
-        var frog = 3.5;
-        System.out.println(frog);
-        frog = frog * 10;
-        System.out.println(frog);
-        frog = frog / 3.5;
-        System.out.println(frog);
-        frog = frog + 4;
-        System.out.println(frog);
+        int budget1 = 1000;
+        int daysCount = 0;
+        for (int currentDayFor = 1; budget1 > 0; currentDayFor++) {
+            daysCount++;
+            if (currentDayFor % 5 == 0) {
+                continue;
+            }
+            budget1 -= dailyRate;
 
-        var mass1 = 78.2;
-        var mass2 = 82.7;
-        var massTotal = mass1 + mass2;
-        System.out.println("Общая масса двух боксеров " + massTotal + " кг");
-        var massDiff = mass2 - mass1;
-        System.out.println("Разница веса двух боксеров составляет " + massDiff + " кг");
-        var massRemainder = mass2 % mass1;
-        System.out.println("Остаток от деления " + massRemainder);
+        }
+        System.out.println("Количество дней, на которые хватит бюджета (for): " + daysCount);
 
-        var y = 640;
-        var z = 8;
-        var x = y / z;
-        System.out.println("Всего работников в компании - " + x + " человек");
-        var x1 = 94;
-        var x2 = x + x1;
-        var y1 = x2 * z;
-        System.out.println("Если в компании работает " + x2 + " человек, то всего " + y1 + " часов работы может быть поделено между сотрудниками");
+        // Задание 4
+        int month = 0;
+        int total = 0;
+        int deposit = 15000;
+        do {
+            month++;
+            total += deposit;
+            if (month % 6 == 0) {
+                total += ((total / 100) * 7);
+            }
+            System.out.println(month + " Месяц" + " накоплено " + total);
+            if (total >= 12000000) {
+                break;
+            }
+        } while (true);
+
+        // Задание 5
+        int charge =50;
+        int minute = 0;
+        int overheats = 0;
+        while (charge < 100 && overheats < 3) {
+            minute++;
+            if (minute % 10 == 0) {
+                overheats++;
+                System.out.println("Перегрев! Зарядка прерывается на 2 минуты.");
+                minute += 2;
+                continue;
+            }
+            charge += 2;
+            if (overheats > 3) {
+                System.out.println("Зарядка прекращена. Текущий заряд: " + charge + "%");
+                break;
+            }
+        }
+        System.out.println("Время зарядки составило " + minute + " минут.");
+
 
     }
 }
